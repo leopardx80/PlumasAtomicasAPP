@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Plumas Atómicas</string>
+    <string name="action_settings">Configuración</string>
+    <string name="action_search">Buscar</string>
+    <string name="drawer_open">Abrir</string>
+    <string name="drawer_close">Cerrar</string>
+    <string name="nav_item_home">Inicio</string>
+    <string name="nav_item_friends">Amigos</string>
+    <string name="nav_item_notifications">Notificaciones</string>
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+    <string name="title_messages">PA+</string>
+    <string name="title_friends">PA+</string>
+    <string name="title_home">PA+</string>
+    <string name="hello_blank_fragment">Plumas Atómicas</string>
+    <string name="facebook_app_id">10206823646853461</string>
+    <string name="title_activity_video_detail">PA+</string>
+    <string name="title_activity_activity_login">activity_login</string>
+</resources>
