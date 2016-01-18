@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -102,6 +103,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         public TextView extract;
         public NetworkImageView images;
         public ImageLoader mImageLoader;
+        public Button btn_share;
 
 
             public VideoViewHolder(View v) {
@@ -110,17 +112,27 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
                 title = (TextView) v.findViewById(R.id.title);
                 images = (NetworkImageView) v.findViewById(R.id.thumbnail);
-
+                btn_share = (Button) v.findViewById(R.id.btn_share);
                 images.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
-
                         Intent intent = new Intent (v.getContext(), VideoDetailActivity.class);
                         intent.putExtra("Titulo",title.getText());
                         v.getContext().startActivity(intent);
                         System.out.println("Hello World");
                     }
 
+                });
+
+                btn_share.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String userEntry = title.getText().toString();
+                        Intent textShareIntent = new Intent(Intent.ACTION_SEND);
+                        textShareIntent.putExtra(Intent.EXTRA_TEXT, userEntry);
+                        textShareIntent.setType("text/plain");
+                        v.getContext().startActivity(Intent.createChooser(textShareIntent, "Compartir con..."));
+                    }
                 });
             }
     }

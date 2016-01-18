@@ -5,15 +5,11 @@
 package com.example.agl.myapplication.VolleyJson;
 
 import android.app.Application;
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import android.util.LruCache;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.Volley;
+
 import com.example.agl.myapplication.util.LruBitmapCache;
 
 

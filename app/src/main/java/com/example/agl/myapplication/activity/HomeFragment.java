@@ -94,15 +94,13 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         // Begin load json ;D
 
         swipeRefreshLayout.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        swipeRefreshLayout.setRefreshing(true);
-                                        fetchVideo();
-                                    }
-                                }
+            @Override
+            public void run() {
+                    swipeRefreshLayout.setRefreshing(true);
+                    fetchVideo();
+                }
+            }
         );
-
-
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.videoList);
 
@@ -129,7 +127,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         //
         //---------------------------------------------------------
 
-        URL_JSON = URL_JSON + OFF_SET;
+        URL_JSON = URL_JSON + OFF_SET + API_SECRET_KEY;
 
 
        // if (conn.isNetworkAvailableAndConnected()){
@@ -182,6 +180,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     System.out.println(error.getMessage());
                     // hide the progress dialog
                     hidepDialog();
+
+                    Toast.makeText(getContext(), "Error en la carga!", Toast.LENGTH_SHORT).show();
                     swipeRefreshLayout.setRefreshing(false);
                 }
             });
@@ -222,7 +222,5 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     public void onDetach() {
         super.onDetach();
     }
-
-
 
 }

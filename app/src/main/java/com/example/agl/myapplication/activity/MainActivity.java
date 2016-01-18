@@ -11,8 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-import com.facebook.FacebookSdk;
-
 import com.example.agl.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
@@ -41,13 +39,20 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         displayView(0);
     }
 
+    /**
+     * Search menu options or configure
+     * */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar if it is present.
       //  getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    /**
+     * handler menu options or configure
+     * */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+
             return true;
         }
 
@@ -81,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private void displayView(int position) {
         Fragment fragment = null;
         String title = getString(R.string.app_name);
+
         switch (position) {
             case 0:
                 fragment = new HomeFragment();
@@ -103,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_body, fragment);
             fragmentTransaction.commit();
-
             // set the toolbar title
             getSupportActionBar().setTitle(title);
         }

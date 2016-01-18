@@ -1,9 +1,4 @@
-/**
- * Created by agl on 10/8/15.
- *
- */
 package com.example.agl.myapplication.adapter;
-
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
